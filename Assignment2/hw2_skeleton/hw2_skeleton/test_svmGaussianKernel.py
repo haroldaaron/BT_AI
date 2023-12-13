@@ -21,9 +21,9 @@ iris = datasets.load_iris()
 X = iris.data[:, :2]  # we only take the first two features
 Y = iris.target
 
-print "Training the SVMs..."
+print ("Training the SVMs...")
 
-C = 1.0  # value of C for the SVMs
+C = 100  # value of C for the SVMs
 
 # create an instance of SVM with the custom kernel and train it
 myModel = svm.SVC(C = C, kernel=myGaussianKernel)
@@ -34,8 +34,8 @@ equivalentGamma = 1.0 / (2 * _gaussSigma ** 2)
 model = svm.SVC(C = C, kernel='rbf', gamma=equivalentGamma)
 model.fit(X, Y)
 
-print ""
-print "Testing the SVMs..."
+print ("")
+print ("Testing the SVMs...")
 
 h = .02  # step size in the mesh
 

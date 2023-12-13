@@ -16,22 +16,21 @@ from sklearn import svm, datasets
 
 
 # load the data
-filename = 'data/svmData.dat'
+filename = 'Assignment2\hw2_skeleton\hw2_skeleton\data\svmData.dat'
 allData = np.loadtxt(filename, delimiter=',')
 
 X = allData[:,:-1]
 Y = allData[:,-1]
 
 
-C = 0.01
-
+C = 0.001
 # train the SVM
-print "Training the SVM"
+print ("Training the SVM")
 clf = svm.SVC(C=C,kernel='linear')
 clf.fit(X, Y)
 
-print ""
-print "Testing the SVM"
+print ("")
+print ("Testing the SVM")
 
 h = .02  # step size in the mesh
 
